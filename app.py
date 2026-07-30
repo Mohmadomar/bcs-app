@@ -1,3 +1,18 @@
+bcs-app
+Repository navigation
+Code
+Issues
+Pull requests
+bcs-app
+/app.py
+Mohmadomar
+Mohmadomar
+23 minutes ago
+77 lines (62 loc) · 3.76 KB
+
+Code
+
+Blame
 import streamlit as st
 import google.generativeai as genai
 from PIL import Image
@@ -75,3 +90,14 @@ if st.button("🔍 تحليل وبدء التقييم", type="primary"):
 
         except Exception as e:
             st.error(f"حدث خطأ أثناء التحليل: {e}"
+                اصغ التقرير باللغة العربية بطريقة منظمة باستخدام النقاط والعناوين.
+                """
+
+                response = model.generate_content([prompt, side_img, back_img])
+
+                st.success("تم التحليل بنجاح!")
+                st.markdown("### 📊 تقرير التقييم:")
+                st.markdown(response.text)
+
+        except Exception as e:
+            st.error(f"حدث خطأ أثناء التحليل: {e}")
